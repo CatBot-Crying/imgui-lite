@@ -12,6 +12,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: compiler 
         run: |
+          export NDK_PROJECT_PATH=Android.mk
+          ndk-build
           chmod 777 build.sh
           ./build.sh
       - name: Upload
